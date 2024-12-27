@@ -131,19 +131,25 @@ class PluginPterodactyl extends ServerPlugin
                         'type' => 'text',
                         'label' => 'Databases',
                         'description' => 'How many databases the client can create',
-                        'value' => '0',
+                        'value' => '',
                     ],
                     'backups' => [
                         'type' => 'text',
                         'label' => 'Backups',
                         'description' => 'How many backups the client can create',
-                        'value' => '0',
+                        'value' => '',
+                    ],
+                    'splits' => [
+                        'type' => 'text',
+                        'label' => 'Splits',
+                        'description' => 'How many splits the client can create',
+                        'value' => '',
                     ],
                     'allocations' => [
                         'type' => 'text',
                         'label' => 'Allocations',
                         'description' => 'How many allocations the client can create',
-                        'value' => '0',
+                        'value' => '',
                     ]
                 ]
             ]
@@ -318,6 +324,7 @@ class PluginPterodactyl extends ServerPlugin
                 'databases' => $this->getOption($args, 'databases', $args['package']['variables']['databases']),
                 'allocations' => $this->getOption($args, 'allocations', $args['package']['variables']['allocations']),
                 'backups' => $this->getOption($args, 'backups', $args['package']['variables']['backups']),
+                'splits' => $this->getOption($args, 'splits', $args['package']['variables']['splits']),
             ],
             'deploy' => [
                 'locations' => [$locationId],
