@@ -145,6 +145,12 @@ class PluginPterodactyl extends ServerPlugin
                         'description' => 'How many splits the client can create',
                         'value' => '',
                     ],
+                    'proxy_limit' => [
+                        'type' => 'text',
+                        'label' => 'Reverse Proxies',
+                        'description' => 'How many proxies the server can create',
+                        'value' => '',
+                    ],
                     'allocations' => [
                         'type' => 'text',
                         'label' => 'Allocations',
@@ -325,6 +331,7 @@ class PluginPterodactyl extends ServerPlugin
                 'allocations' => $this->getOption($args, 'allocations', $args['package']['variables']['allocations']),
                 'backups' => $this->getOption($args, 'backups', $args['package']['variables']['backups']),
                 'splits' => $this->getOption($args, 'splits', $args['package']['variables']['splits']),
+                'proxy_limit' => $this->getOption($args, 'proxy_limit', $args['package']['variables']['proxy_limit']),
             ],
             'deploy' => [
                 'locations' => [$locationId],
